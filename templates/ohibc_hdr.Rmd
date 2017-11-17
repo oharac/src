@@ -1,0 +1,12 @@
+---
+output: html_fragment
+---
+<p align = 'center'>
+<a href = 'http://www.ohibc.org/', target = '_blank'>
+<img src = 'ohibc_banner1.png', alt = 'ohibc logo'>
+</a>
+<br>
+[OHI British Columbia](http://www.ohibc.org/) |
+[OHI Science](http://ohi-science.org) |
+[Citation policy](https://github.com/OHI-Science/ohiprep/releases)
+</p>
