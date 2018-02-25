@@ -1,12 +1,17 @@
 ---
 output: html_fragment
 ---
-<p align = 'center'>
-<a href = 'http://www.ohibc.org/', target = '_blank'>
+<p align = 'right'>
+<!--<a href = 'https://github.com/oharac/', target = '_blank'>
 <img src = 'ohibc_banner1.png', alt = 'ohibc logo'>
-</a>
-<br>
+</a>-->
+<br><font size="4">
+[O'Hara on GitHub](https://github.com/oharac)
+</font></p>
+<hr>
+<!--
+In here, put in a link to repo and website?
 [OHI British Columbia](http://www.ohibc.org/) |
 [OHI Science](http://ohi-science.org) |
 [Citation policy](https://github.com/OHI-Science/ohiprep/releases)
-</p>
+-->

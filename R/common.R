@@ -1,11 +1,4 @@
 
-# set the neptune data_edit share based on operating system
-dir_M             <- c('Windows' = '//mazu.nceas.ucsb.edu/ohi',
-                       'Darwin'  = '/Volumes/ohi',    ### connect (cmd-K) to smb://mazu/ohi
-                       'Linux'   = '/home/shares/ohi')[[ Sys.info()[['sysname']] ]]
-
-dir_M <- path.expand(dir_M)
-
 # install (if necessary) and load commonly used libraries
 packages <- c('tidyverse')
 if (length(setdiff(packages, rownames(installed.packages()))) > 0) {
@@ -17,6 +10,17 @@ library(tidyverse)
 library(RColorBrewer)
 library(stringr)
 rm(packages)
+
+# set the neptune data_edit share based on operating system
+dir_M <- c('Windows' = '//mazu.nceas.ucsb.edu/ohi',
+           'Darwin'  = '/Volumes/ohi',    ### connect (cmd-K) to smb://mazu/ohi
+           'Linux'   = '/home/shares/ohi')[[ Sys.info()[['sysname']] ]] %>%
+  path.expand()
+
+dir_O <- c('Darwin'  = '/Volumes/ohara',    ### connect (cmd-K) to smb://mazu/ohara
+           'Linux'   = '/home/ohara')[[ Sys.info()[['sysname']] ]] %>%
+  path.expand()
+
 
 ### Set up some options
 # options(scipen = "999")           ### Turn off scientific notation
