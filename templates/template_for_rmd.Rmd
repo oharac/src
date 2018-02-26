@@ -1,5 +1,5 @@
 ---
-title: 'OHIBC: data_prep_spp.Rmd'
+title: 'PROJECT: description'
 author: "*Compiled on `r date()` by `r Sys.info()['user']`*"
 output: 
   html_document:
@@ -21,7 +21,7 @@ output:
 knitr::opts_chunk$set(fig.width = 6, fig.height = 4, fig.path = 'Figs/',
                       echo = TRUE, message = FALSE, warning = FALSE)
 
-source('https://github.com/oharac/src/tree/master/R/common.R')
+source('https://raw.githubusercontent.com/oharac/src/master/R/common.R')
 
 dir_anx     <- file.path(dir_M, 'git-annex/bcprep')
 
@@ -29,7 +29,7 @@ dir_anx     <- file.path(dir_M, 'git-annex/bcprep')
 library(provRmd); prov_setup()
 
 ### support scripts
-# source('https://github.com/oharac/src/tree/master/R/rast_tools.R')) 
+# source('https://raw.githubusercontent.com/oharac/src/master/R/rast_tools.R')) 
   ### raster plotting and analyzing scripts
 
 ```

@@ -1,15 +1,7 @@
 
-# install (if necessary) and load commonly used libraries
-packages <- c('tidyverse')
-if (length(setdiff(packages, rownames(installed.packages()))) > 0) {
-  cat(sprintf("Installing %s\n", setdiff(packages, rownames(installed.packages()))))
-  install.packages(setdiff(packages, rownames(installed.packages())))
-}
-
 library(tidyverse)
 library(RColorBrewer)
 library(stringr)
-rm(packages)
 
 # set the neptune data_edit share based on operating system
 dir_M <- c('Windows' = '//mazu.nceas.ucsb.edu/ohi',
@@ -65,3 +57,4 @@ clean_df_names <- function(df) {
                str_replace_all('^_+|_+$', ''))
   return(df)
 }
+
