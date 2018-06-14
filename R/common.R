@@ -34,7 +34,6 @@ ggtheme_plot <- function(base_size = 9) {
         # panel.grid.major = element_blank(),
         legend.key       = element_rect(colour = NA, fill = NA),
         axis.line        = element_blank()) # element_line(colour = "grey30", size = .5)
-  )
 }
 
 show_dupes <- function(x, y, na.rm = FALSE) {
