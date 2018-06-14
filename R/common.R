@@ -33,7 +33,7 @@ ggtheme_plot <- function(base_size = 9) {
         panel.grid.major = element_line(colour = 'grey90', size = .25),
         # panel.grid.major = element_blank(),
         legend.key       = element_rect(colour = NA, fill = NA),
-        axis.line        = element_blank()) # element_line(colour = "grey30", size = .5),
+        axis.line        = element_blank()) # element_line(colour = "grey30", size = .5)
   )
 }
 
