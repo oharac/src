@@ -26,15 +26,14 @@ ggtheme_plot <- function(base_size = 9) {
         plot.title = element_text(size = rel(1.25), hjust = 0, face = 'bold'),
         panel.background = element_blank(),
         strip.background = element_blank(),
-        strip.border     = element_blank(),
         legend.position  = 'right',
         panel.border     = element_blank(),
         panel.grid.minor = element_blank(),
         panel.grid.major = element_line(colour = 'grey90', size = .25),
         # panel.grid.major = element_blank(),
         legend.key       = element_rect(colour = NA, fill = NA),
-        axis.line        = element_blank()) # element_line(colour = "grey30", size = .5)
-}
+        axis.line        = element_blank() # element_line(colour = "grey30", size = .5)
+)}
 
 show_dupes <- function(x, y, na.rm = FALSE) {
   if(na.rm)
