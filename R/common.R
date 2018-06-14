@@ -26,7 +26,7 @@ ggtheme_plot <- function(base_size = 9) {
         plot.title = element_text(size = rel(1.25), hjust = 0, face = 'bold'),
         panel.background = element_blank(),
         strip.background = element_blank(),
-        strip.text       = element_text(size = rel(1.25), face = 'bold'),
+        strip.text       = element_text(size = base_size, face = 'italic'),
         legend.position  = 'right',
         panel.border     = element_blank(),
         panel.grid.minor = element_blank(),
