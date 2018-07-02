@@ -40,7 +40,7 @@ ggtheme_plot <- function(base_size = 9) {
 ggtheme_map <- function(base_size = 9) {
   theme(text             = element_text(family = 'Helvetica', color = 'gray30', size = base_size),
         plot.title       = element_text(size = rel(1.25), hjust = 0, face = 'bold'),
-        panel.background = element_rect(fill = 'grey80', color = NA),
+        panel.background = element_blank(),
         legend.position  = 'right',
         panel.border     = element_blank(),
         panel.grid.minor = element_blank(),
