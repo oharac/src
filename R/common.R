@@ -34,6 +34,23 @@ ggtheme_plot <- function(base_size = 9) {
                axis.line        = element_blank()) # element_line(colour = "grey30", size = .5))
 }
 
+### generic theme for maps
+ggtheme_map <- function(base_size = 9) {
+  theme(text             = element_text(family = 'Helvetica', color = 'gray30', size = base_size),
+        plot.title       = element_text(size = rel(1.25), hjust = 0, face = 'bold'),
+        panel.background = element_rect(fill = 'grey80', color = NA),
+        legend.position  = 'right',
+        panel.border     = element_blank(),
+        panel.grid.minor = element_blank(),
+        panel.grid.major = element_blank(),
+        # panel.grid.major = element_blank(),
+        axis.ticks       = element_blank(),
+        axis.text        = element_blank(),
+        axis.title       = element_blank(),
+        legend.key       = element_rect(colour = NA, fill = NA),
+        axis.line        = element_blank()) # element_line(colour = "grey30", size = .5)) +
+}
+
 show_dupes <- function(x, y, na.rm = FALSE) {
   if(na.rm)
     x <- x[!is.na(x[[y]]), ]
