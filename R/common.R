@@ -77,3 +77,12 @@ clean_df_names <- function(df) {
   return(df)
 }
 
+ditch_mac_cruft <- function() {
+  all_files <- list.files(getwd(), all.files = TRUE,
+                          recursive = TRUE, full.names = TRUE)
+
+  cruft <- all_files[stringr::str_detect(basename(all_files), pattern = '^\\._|^.DS_Store')]
+  message('ditching mac cruft files: \n  ', paste0(cruft, collapse = '\n  '))
+  unlink(cruft)
+}
+
