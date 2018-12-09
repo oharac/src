@@ -23,6 +23,8 @@ options(stringsAsFactors = FALSE) ### Ensure strings come in as character types
 ggtheme_plot <- function(base_size = 9) {
   theme(axis.ticks = element_blank(),
         text       = element_text(family = 'Helvetica', color = 'gray30', size = base_size),
+        axis.text  = element_text(size = rel(0.8)),
+        axis.title = element_text(size = rel(1.0)),
         plot.title = element_text(size = rel(1.25), hjust = 0, face = 'bold'),
         panel.background = element_blank(),
         strip.background = element_blank(),
