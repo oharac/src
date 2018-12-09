@@ -42,7 +42,7 @@ ggtheme_plot <- function(base_size = 9) {
 ggtheme_map <- function(base_size = 9) {
   theme(text             = element_text(family = 'Helvetica', color = 'gray30', size = base_size),
         plot.title       = element_text(size = rel(1.25), hjust = 0, face = 'bold'),
-        panel.background = element_rect(fill = 'grey80', color = NA),
+        panel.background = element_blank(),
         legend.position  = 'right',
         panel.border     = element_blank(),
         panel.grid.minor = element_blank(),
@@ -77,5 +77,14 @@ clean_df_names <- function(df) {
                str_replace_all('[^a-z0-9]+', '_') %>%
                str_replace_all('^_+|_+$', ''))
   return(df)
+}
+
+ditch_mac_cruft <- function() {
+  all_files <- list.files(getwd(), all.files = TRUE,
+                          recursive = TRUE, full.names = TRUE)
+
+  cruft <- all_files[stringr::str_detect(basename(all_files), pattern = '^\\._|^.DS_Store')]
+  message('ditching mac cruft files: \n  ', paste0(cruft, collapse = '\n  '))
+  unlink(cruft)
 }
 
