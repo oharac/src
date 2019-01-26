@@ -2,6 +2,7 @@
 library(tidyverse)
 library(RColorBrewer)
 library(stringr)
+library(here)
 
 # set the neptune data_edit share based on operating system
 dir_M <- c('Windows' = '//mazu.nceas.ucsb.edu/ohi',
