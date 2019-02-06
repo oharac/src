@@ -4,13 +4,14 @@ library(RColorBrewer)
 library(stringr)
 library(here)
 
-# set the neptune data_edit share based on operating system
+# set the Mazu shortcuts based on operating system
 dir_M <- c('Windows' = '//mazu.nceas.ucsb.edu/ohi',
            'Darwin'  = '/Volumes/ohi',    ### connect (cmd-K) to smb://mazu/ohi
            'Linux'   = '/home/shares/ohi')[[ Sys.info()[['sysname']] ]] %>%
   path.expand()
 
-dir_O <- c('Darwin'  = '/Volumes/ohara',    ### connect (cmd-K) to smb://mazu/ohara
+dir_O <- c('Windows' = '//mazu.nceas.ucsb.edu/ohara',
+           'Darwin'  = '/Volumes/ohara',    ### connect (cmd-K) to smb://mazu/ohara
            'Linux'   = '/home/ohara')[[ Sys.info()[['sysname']] ]] %>%
   path.expand()
 
