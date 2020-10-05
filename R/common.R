@@ -4,16 +4,17 @@ library(RColorBrewer)
 library(stringr)
 library(here)
 
+### Commenting these out - not used in more recent scripts, but might still need them for old work
 # set the Mazu shortcuts based on operating system
-dir_M <- c('Windows' = '//mazu.nceas.ucsb.edu/ohi',
-           'Darwin'  = '/Volumes/ohi',    ### connect (cmd-K) to smb://mazu/ohi
-           'Linux'   = '/home/shares/ohi')[[ Sys.info()[['sysname']] ]] %>%
-  path.expand()
-
-dir_O <- c('Windows' = '//mazu.nceas.ucsb.edu/ohara',
-           'Darwin'  = '/Volumes/ohara',    ### connect (cmd-K) to smb://mazu/ohara
-           'Linux'   = '/home/ohara')[[ Sys.info()[['sysname']] ]] %>%
-  path.expand()
+# dir_M <- c('Windows' = '//mazu.nceas.ucsb.edu/ohi',
+#            'Darwin'  = '/Volumes/ohi',    ### connect (cmd-K) to smb://mazu/ohi
+#            'Linux'   = '/home/shares/ohi')[[ Sys.info()[['sysname']] ]] %>%
+#   path.expand()
+# 
+# dir_O <- c('Windows' = '//mazu.nceas.ucsb.edu/ohara',
+#            'Darwin'  = '/Volumes/ohara',    ### connect (cmd-K) to smb://mazu/ohara
+#            'Linux'   = '/home/ohara')[[ Sys.info()[['sysname']] ]] %>%
+#   path.expand()
 
 
 ### Set up some options
@@ -90,3 +91,16 @@ ditch_mac_cruft <- function() {
   unlink(cruft)
 }
 
+### a keyed datatable join for speed
+dt_join <- function(df1, df2, by, type) {
+  a <- case_when(type == 'left' ~ c(FALSE, TRUE, FALSE), ### all, all.x, all.y
+                 type == 'full' ~ c(TRUE, TRUE, TRUE),
+                 type == 'inner' ~ c(FALSE, FALSE, FALSE))
+  
+  ### if all = FFF, behaves like inner join; if all = TTT,
+  ### behaves like full join; if all = FTF, behaves like left_join?
+  dt1 <- data.table::data.table(df1, key = by)
+  dt2 <- data.table::data.table(df2, key = by)
+  dt_full <- merge(dt1, dt2, all = a[1], all.x = a[2], all.y = a[3])
+  return(as.data.frame(dt_full))
+}
