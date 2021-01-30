@@ -4,6 +4,9 @@ library(RColorBrewer)
 library(stringr)
 library(here)
 
+options(dplyr.summarise.inform = FALSE) 
+
+
 ### Commenting these out - not used in more recent scripts, but might still need them for old work
 # set the Mazu shortcuts based on operating system
 # dir_M <- c('Windows' = '//mazu.nceas.ucsb.edu/ohi',
